@@ -28,3 +28,8 @@
 
 }
 
+#waveform ::part(cursor){
+    background-color:red;
+    height:100px;
+    width:2px;
+}
