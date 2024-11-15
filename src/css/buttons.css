@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn {
+    @apply bg-blue-500 text-white rounded px-4 py-1;
+}
+
+.btn-control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-pause {
+    @apply bg-lime-600 rounded px-4 py-1;
+}
+
+.dl {
+    @apply bg-orange-300 text-black rounded px-4 py-2;
+}
+
+.timer {
+    padding-top:10px;
+    text-align: center;
+    margin-left:5%;
+    font-size:0.75rem;
+    width:80%;
+
+}
+

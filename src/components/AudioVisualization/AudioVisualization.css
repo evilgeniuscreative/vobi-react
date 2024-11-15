@@ -1,0 +1,23 @@
+@import '../../css/buttons.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --menu-background: #e2e2e2;
+  --line: #eee;
+  --green: #c4d602;
+  --mainblue: #092969;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #072964;
+  }
+}
+
