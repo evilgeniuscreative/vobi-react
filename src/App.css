@@ -1,7 +1,4 @@
 @import './css/buttons.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   --background: #ffffff;
@@ -23,7 +20,23 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Gamay', Arial, Helvetica, sans-serif;
+}
+
+h2.heading {
+  font-weight: 900;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+.about-text {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  padding: 0;
 }
 
 .demo {
@@ -102,7 +115,7 @@ body {
 
 .hero {
   background-image: url(./durham-ian.jpg);
-  background-position: center;
+  background-position: center left;
   background-size: cover;
   display: flex;
   height: 100vh;
@@ -126,20 +139,16 @@ body {
   background-color: #fefefe;
   border-radius: 3px;
   padding: 3rem;
-}
-
-.main-left {
-  flex-basis: 50%;
-}
-
-.main-right {
-  flex-basis: 45%;
+  flex-basis: 48%;
 }
 
 .bottom-section {
   background-color: var(--green);
   color: var(--mainblue);
   font-weight: 900;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 footer {
@@ -195,4 +204,75 @@ footer section .podcast-text {
 .icon:hover {
   transform: scale(1.15) translateY(7px);
   transition: 0.3s all;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 968px) {
+  .main-section {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .main-left,
+  .main-right {
+    padding: 0.5rem;
+    flex-basis: 100%;
+  }
+
+  .main-menu ul {
+    margin: 0 10%;
+  }
+
+  footer {
+    padding: 70px 10%;
+  }
+
+  .source-connect {
+    display: none;
+  }
+  .source-connect-mobile {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-section {
+    border: 0;
+    gap: 0;
+    padding: 0rem;
+    max-width: 100%;
+    flex-direction: column;
+  }
+  .main-left,
+  .main-right {
+    padding: unset;
+    flex-basis: unset;
+  }
+  footer section {
+    display: block;
+  }
+  .source-connect-mobile {
+    display: none;
+  }
+  .source-connect {
+    display: block;
+  }
+  .source-connect a {
+    display: block;
+  }
+  .source-connect a img {
+    margin: 0 auto;
+  }
+  .footer-flex {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+  .footer-icons {
+    justify-content: center;
+  }
+  .podcast {
+    justify-content: center;
+  }
 }

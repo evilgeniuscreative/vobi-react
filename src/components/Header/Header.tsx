@@ -4,7 +4,6 @@ import '../../App.css';
 const Header = () => {
   return (
     <>
-      {' '}
       <div className='top-header'>
         <section>
           <img

@@ -8,7 +8,7 @@ const Footer = () => {
   };
   return (
     <>
-      <section className='bottom-section text-4xl p-10 text-center'>
+      <section className='bottom-section'>
         Tell me what you want, and I&apos;ll make it happen!
       </section>
       <footer>
@@ -17,7 +17,7 @@ const Footer = () => {
           <a href='19193576004'>(919) 357-6004</a>
         </p>
         <section className='footer-flex'>
-          <div className='flex pt-4 gap-4 footer-icons'>
+          <div className='footer-icons'>
             <div className='icon'>
               <Link
                 to='https://www.linkedin.com/in/voiceoverian/'
@@ -71,8 +71,8 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          {/* right side */}
-          <div className='source-connect'>
+
+          <div className='source-connect '>
             <Link
               to='https://source-elements.com/find/iankleinfeld'
               onClick={handleLink('https://source-elements.com/find/iankleinfeld')}
@@ -86,6 +86,7 @@ const Footer = () => {
               />
             </Link>
           </div>
+
           <div className='podcast-right'>
             <article className='podcast'>
               <div className='podcast-text'>
@@ -124,6 +125,20 @@ const Footer = () => {
             </article>
           </div>
         </section>
+        <div className='source-connect-mobile '>
+          <Link
+            to='https://source-elements.com/find/iankleinfeld'
+            onClick={handleLink('https://source-elements.com/find/iankleinfeld')}
+          >
+            <img
+              width={203}
+              height={65}
+              src='/sourceconnectlogo.webp'
+              alt='Source Connect Standard in Studio'
+              className='icon'
+            />
+          </Link>
+        </div>
       </footer>
     </>
   );
