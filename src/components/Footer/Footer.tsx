@@ -17,62 +17,78 @@ const Footer = () => {
           <a href='19193576004'>(919) 357-6004</a>
         </p>
         <section className='footer-flex'>
-          <div className='footer-icons'>
-            <div className='icon'>
-              <Link
-                to='https://www.linkedin.com/in/voiceoverian/'
-                onClick={handleLink('https://www.linkedin.com/in/voiceoverian/')}
-              >
-                <img
-                  width={36}
-                  height={36}
-                  alt='LinkedIn VoiceByIan'
-                  src='/icon-linkedin.webp'
-                />
-              </Link>
+          <div className='icon-container'>
+            <div className='footer-icons'>
+              <div className='icon'>
+                <Link
+                  to='https://www.linkedin.com/in/voiceoverian/'
+                  onClick={handleLink('https://www.linkedin.com/in/voiceoverian/')}
+                >
+                  <img
+                    width={36}
+                    height={36}
+                    alt='LinkedIn VoiceByIan'
+                    src='/icon-linkedin.webp'
+                  />
+                </Link>
+              </div>
+              <div className='icon'>
+                <Link
+                  to='https://www.instagram.com/voicebyian/'
+                  onClick={handleLink('https://www.instagram.com/voicebyian/')}
+                >
+                  <img
+                    width={36}
+                    height={36}
+                    alt='Instagram VoiceByIan'
+                    src='/icon-ig.webp'
+                  />
+                </Link>
+              </div>
+              <div className='icon'>
+                <Link
+                  to='https://twitter.com/VoiceByIan'
+                  onClick={handleLink('https://twitter.com/VoiceByIan')}
+                >
+                  <img
+                    width={36}
+                    height={36}
+                    alt='Twitter VoiceByIan'
+                    src='/icon-twitter.webp'
+                  />
+                </Link>
+              </div>
+              <div className='icon'>
+                <Link
+                  to='https://www.facebook.com/voicebyian'
+                  onClick={handleLink('https://www.facebook.com/voicebyian')}
+                >
+                  <img
+                    width={36}
+                    height={36}
+                    src='/icon-fb.webp'
+                    alt='Facebook VoiceByIan'
+                  />
+                </Link>
+              </div>
             </div>
-            <div className='icon'>
+            <div className='source-connect '>
               <Link
-                to='https://www.instagram.com/voicebyian/'
-                onClick={handleLink('https://www.instagram.com/voicebyian/')}
+                to='https://source-elements.com/find/iankleinfeld'
+                onClick={handleLink('https://source-elements.com/find/iankleinfeld')}
               >
                 <img
-                  width={36}
-                  height={36}
-                  alt='Instagram VoiceByIan'
-                  src='/icon-ig.webp'
-                />
-              </Link>
-            </div>
-            <div className='icon'>
-              <Link
-                to='https://twitter.com/VoiceByIan'
-                onClick={handleLink('https://twitter.com/VoiceByIan')}
-              >
-                <img
-                  width={36}
-                  height={36}
-                  alt='Twitter VoiceByIan'
-                  src='/icon-twitter.webp'
-                />
-              </Link>
-            </div>
-            <div className='icon'>
-              <Link
-                to='https://www.facebook.com/voicebyian'
-                onClick={handleLink('https://www.facebook.com/voicebyian')}
-              >
-                <img
-                  width={36}
-                  height={36}
-                  src='/icon-fb.webp'
-                  alt='Facebook VoiceByIan'
+                  width={203}
+                  height={65}
+                  src='/sourceconnectlogo.webp'
+                  alt='Source Connect Standard in Studio'
+                  className='icon'
                 />
               </Link>
             </div>
           </div>
 
-          <div className='source-connect '>
+          <div className='source-connect-mobile '>
             <Link
               to='https://source-elements.com/find/iankleinfeld'
               onClick={handleLink('https://source-elements.com/find/iankleinfeld')}
@@ -125,20 +141,6 @@ const Footer = () => {
             </article>
           </div>
         </section>
-        <div className='source-connect-mobile '>
-          <Link
-            to='https://source-elements.com/find/iankleinfeld'
-            onClick={handleLink('https://source-elements.com/find/iankleinfeld')}
-          >
-            <img
-              width={203}
-              height={65}
-              src='/sourceconnectlogo.webp'
-              alt='Source Connect Standard in Studio'
-              className='icon'
-            />
-          </Link>
-        </div>
       </footer>
     </>
   );

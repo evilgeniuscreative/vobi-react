@@ -208,9 +208,19 @@ footer section .podcast-text {
   transition: 0.3s all;
   cursor: pointer;
 }
+
 .icon:hover {
   transform: scale(1.15) translateY(7px);
   transition: 0.3s all;
+}
+
+.source-connect {
+  display: block;
+  padding-top: 30px;
+}
+
+.source-connect-mobile {
+  display: none;
 }
 
 /* MOBILE */
@@ -244,11 +254,8 @@ footer section .podcast-text {
     padding: 70px 10%;
   }
 
-  .source-connect {
-    display: none;
-  }
   .source-connect-mobile {
-    display: block;
+    display: none;
   }
 }
 
@@ -273,15 +280,14 @@ footer section .podcast-text {
     display: block;
   }
   .source-connect-mobile {
-    display: none;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
   .source-connect {
-    display: block;
+    display: none;
   }
-  .source-connect a {
-    display: block;
-  }
-  .source-connect a img {
+  .source-connect-mobile a img {
     margin: 0 auto;
   }
   .footer-flex {
