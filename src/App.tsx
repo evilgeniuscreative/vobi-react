@@ -11,7 +11,12 @@ function App() {
       <div>
         <Header></Header>
         <main>
-          <div className='hero'></div>
+          <div className='hero'>
+            <img
+              src={window.innerWidth <= 768 ? './durham-ian.jpg' : './durham-ian-sm.jpg'}
+              alt=''
+            />
+          </div>
         </main>
         <section className='main-section'>
           <article className='main-left'>
