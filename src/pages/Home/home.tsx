@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import AudioVisualzation from '../../components/AudioVisualization/AudioVisualzation';
@@ -16,7 +17,7 @@ const Home = () => {
             />
           </div>
         </main>
-        <section className='main-section'>
+        <section className='main-section homepage'>
           <article className='main-left'>
             <h2 className='heading'>
               50% guy next door, 50% evil genius mad scientist. 100% your choice.
@@ -47,15 +48,22 @@ const Home = () => {
             </p>
           </article>
           <article className='main-right'>
-            <h2 className='text-4xl font-bold'>Demos</h2>
-            <p className='text-xl'>
-              Please have a listen to my demos to see what I can do for you.
+            <h2 className='heading'>Demos</h2>
+            <p>Please have a listen to my demos to see what kinds of things I can do for you. </p>
+            <p>
+              <Link
+                to='https://calendly.com/voiceoverbyian'
+                className='link-visible'
+              >
+                Book a free 15 minute phone call
+              </Link>{' '}
+              to discuss your project, your needs, vision, and how I can help you.
             </p>
-            {/*  Demo player */}
-            <p className='about-text '>Commercial Demo</p>
+
+            <p className='demo-title'>Commercial Demo</p>
             <AudioVisualzation audioSrc='commercial'></AudioVisualzation>
 
-            <p className='about-text '>Character / Game / Animation Demo</p>
+            <p className='demo-title'>Character / Game / Animation Demo</p>
             <AudioVisualzation audioSrc='character'></AudioVisualzation>
           </article>
         </section>
