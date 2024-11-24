@@ -63,9 +63,7 @@ p {
 
 .top-header section {
   align-items: center;
-  background-color: var(--background);
-  background-image: url('./soundboard-waveform.jpg');
-  background-size: contain;
+  background-color: var(--mainblue);
   color: var(--foreground);
   padding: 1.5rem;
   display: flex;
@@ -73,18 +71,37 @@ p {
   justify-content: space-around;
 }
 
-.top-header img {
-  height: 100%;
+.top-header section .bg-soundwave {
+  position: absolute;
+  max-height: 110px;
+  overflow: hidden;
+  width: 100%;
+  z-index: 0;
 }
 
-.top-header aside {
+.top-header-front {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+
+.bg-soundwave img {
+  height: 110px;
+  width: 100%;
+}
+
+.top-header .top-text {
   color: white;
   display: flex;
   flex-direction: column;
 }
 
-.ian-name,
-.ian-tag {
+.top-text .ian-name,
+.top-text .ian-tag {
   font-family: 'Gamay', sans-serif;
   text-align: right;
 }

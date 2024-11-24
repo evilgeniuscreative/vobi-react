@@ -6,14 +6,25 @@ const Header = () => {
     <>
       <div className='top-header'>
         <section>
-          <img
-            src='./vobi-head.png'
-            alt='Voiceover by Ian - Animation, Commercial, Narration, Medical Narration, eLearning, Explainer, and more!'
-          />
-          <aside>
-            <div className='ian-name'>Ian Kleinfeld</div>
-            <div className='ian-tag'>Voice Actor Services for You</div>
-          </aside>
+          <div className='top-header-front'>
+            <figure className='top-header-vobi-head'>
+              <img
+                src='./vobi-head.png'
+                alt='Voiceover by Ian - Animation, Commercial, Narration, Medical Narration, eLearning, Explainer, and more!'
+              />
+            </figure>
+
+            <aside className='top-text'>
+              <div className='ian-name'>Ian Kleinfeld</div>
+              <div className='ian-tag'>Voice Actor Services for You</div>
+            </aside>
+          </div>
+          <figure className='bg-soundwave'>
+            <img
+              src='./soundboard-waveform.jpg'
+              alt='Waveform Header for Voice Over by Ian dot com'
+            />
+          </figure>
         </section>
       </div>
       <nav className='main-menu'>
