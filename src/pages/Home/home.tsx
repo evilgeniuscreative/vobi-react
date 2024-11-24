@@ -1,4 +1,4 @@
-import React from 'react';
+import './home.css';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
@@ -7,21 +7,19 @@ import AudioVisualzation from '../../components/AudioVisualization/AudioVisualza
 const Home = () => {
   return (
     <>
-      <div>
+      <div className='content-container'>
         <Header></Header>
         <main>
           <div className='hero'>
             <img
-              src={window.innerWidth <= 768 ? './durham-ian.jpg' : './durham-ian-sm.jpg'}
-              alt=''
+              src={window.innerWidth <= 768 ? './durham-hero.webp' : './durham-hero-sm.webp'}
+              alt='Ian Kleinfeld, voice actor, Durham, NC'
             />
           </div>
         </main>
         <section className='main-section homepage'>
           <article className='main-left'>
-            <h2 className='heading'>
-              50% guy next door, 50% evil genius mad scientist. 100% your choice.
-            </h2>
+            <h2>50% guy next door, 50% evil genius mad scientist. 100% your choice.</h2>
             <p className='about-text'>
               I&apos;m Ian Kleinfeld, a voice talent with a boatload of enthusiasm, energy and
               creativity. I&apos;m a singer, songwriter, and drummer by hobby, and a voice actor by
@@ -48,7 +46,7 @@ const Home = () => {
             </p>
           </article>
           <article className='main-right'>
-            <h2 className='heading'>Demos</h2>
+            <h2>Demos</h2>
             <p>Please have a listen to my demos to see what kinds of things I can do for you. </p>
             <p>
               <Link

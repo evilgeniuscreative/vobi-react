@@ -2,6 +2,7 @@ import React, { useRef, useMemo, useCallback } from 'react';
 // import { createRoot } from 'react-dom/client'
 import Timeline from 'wavesurfer.js/dist/plugins/timeline.esm.js';
 import { useWavesurfer } from '@wavesurfer/react';
+import { ArrowDownTrayIcon, PlayIcon, PauseIcon } from '@heroicons/react/20/solid';
 import './AudioVisualization.css';
 // import WaveSurfer from 'wavesurfer.js';
 
@@ -48,12 +49,15 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
             style={{ minWidth: '5em' }}
           >
             {isPlaying ? 'Pause' : 'Play'}
+            {isPlaying ? <PauseIcon className='icon-pp' /> : <PlayIcon className='icon-pp' />}
           </button>
+
           <a
             className='btn dl'
             download
             href={audioSource}
           >
+            <ArrowDownTrayIcon className='icon-dl' />
             Download
           </a>
         </div>

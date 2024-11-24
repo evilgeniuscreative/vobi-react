@@ -1,0 +1,15 @@
+.main-left,
+.main-right {
+  background-color: var(--background);
+  border-radius: 3px;
+  padding: 2rem 3rem;
+  flex-basis: 48%;
+}
+
+@media screen and (max-width: 768px) {
+  .main-left,
+  .main-right {
+    padding: 1rem;
+    flex-basis: 100%;
+  }
+}

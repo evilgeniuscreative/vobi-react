@@ -3,8 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -21,3 +19,40 @@
   }
 }
 
+.btn-control {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  background-color: rgba(200, 200, 200, 0.25);
+  box-shadow: 0 0 7px rgba(200, 200, 200, 0.25);
+  @apply rounded;
+}
+
+.btn-pause {
+  @apply bg-lime-600 rounded px-4 py-1;
+}
+
+a.dl {
+  @apply bg-orange-300 text-black rounded px-4 py-2;
+}
+
+.icon-dl,
+.icon-pp {
+  float: left;
+  height: 23px;
+  padding-right: 5px;
+}
+
+.timer {
+  padding-top: 10px;
+  margin-bottom: 0 !important;
+  text-align: center;
+  font-size: 0.75rem;
+  width: 100%;
+}
+
+#waveform ::part(cursor) {
+  background-color: red;
+  height: 100px;
+  width: 2px;
+}
