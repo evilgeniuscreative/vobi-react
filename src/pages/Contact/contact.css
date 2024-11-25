@@ -1,33 +1,6 @@
-.contact-page {
-  padding: 0;
-  background: transparent;
-  margin: 0 auto;
-  max-width: 1000px;
-}
-
 .contact-content {
   background-color: var(--background);
   margin-bottom: 2rem;
-}
-
-.contact-page .inputs {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  align-items: stretch;
-  height: auto;
-}
-
-.contact-success {
-  background-color: var(--green);
-  color: var(--foreground);
-  border-radius: 3px;
-  opacity: 0;
-  padding: 1.5rem;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-  width: 300px;
 }
 
 #contact-form {
@@ -35,21 +8,56 @@
   transition: all 0.3s ease-in-out;
 }
 
+.contact-page {
+  background: transparent;
+  margin: 0 auto;
+  max-width: 1000px;
+  padding: 0;
+}
+
+.contact-page .inputs {
+  align-items: stretch;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: space-between;
+}
+
+.contact-success {
+  background-color: var(--green);
+  border-radius: 3px;
+  color: var(--foreground);
+  opacity: 0;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  width: 300px;
+}
+
 input,
 textarea {
-  font-size: 16px;
+  border-radius: 0.25rem;
   display: block;
+  font-size: 16px;
   padding: 0.5rem;
   width: 300px;
-  border-radius: 0.25rem;
 }
 
 iframe {
   border-radius: 0.25rem;
-  padding: 2rem 0 0 0;
   margin: 0;
   max-height: 390px;
   min-height: 390px;
+  padding: 2rem 0 0 0;
+}
+
+label {
+  color: white;
+  display: block;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
 .main-text {

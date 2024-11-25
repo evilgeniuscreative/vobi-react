@@ -1,0 +1,5 @@
+ul.services-list {
+  list-style-type: circle;
+  padding-bottom: 20px;
+  padding-left: 3rem;
+}

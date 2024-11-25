@@ -1,0 +1,161 @@
+.bottom-section {
+  background-color: var(--green);
+  color: var(--mainblue);
+  font-size: 2.5rem;
+  font-weight: 900;
+  padding: 1rem;
+  text-align: center;
+}
+
+footer {
+  background-color: var(--foreground);
+  color: var(--background);
+  padding: 70px 20%;
+}
+
+footer > p {
+  font-size: 0.8rem;
+  padding-bottom: 15px;
+}
+
+footer section {
+  display: flex;
+  flex-basis: 20%;
+  justify-content: space-between;
+}
+
+footer section article {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-icons {
+  display: flex;
+  flex-basis: 200px;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 20px;
+}
+
+footer section .source-connect {
+  margin-top: 20px;
+}
+
+footer section .vop-link {
+  color: rgb(204, 51, 102);
+}
+
+footer section .podcast {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+footer section .pod-text {
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+footer section .podcast-text {
+  font-size: 0.8rem;
+  max-width: 200px;
+}
+
+.icon {
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.icon:hover {
+  transform: scale(1.15) translateY(7px);
+  transition: 0.3s all;
+}
+
+.source-connect {
+  display: block;
+  padding-top: 30px;
+}
+
+.source-connect-mobile {
+  display: none;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 1300px) {
+  .main-page {
+    padding: 0 10%;
+  }
+}
+@media screen and (max-width: 968px) {
+  .main-section {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .ian-name {
+    font-size: 2rem;
+  }
+  .ian-tag {
+    font-size: 1rem;
+  }
+
+  .main-menu ul {
+    margin: 0 10%;
+  }
+  .hero {
+    background-position: center;
+  }
+
+  footer {
+    padding: 70px 10%;
+  }
+
+  .source-connect-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-section {
+    border: 0;
+    flex-direction: column;
+    gap: 0;
+    max-width: 100%;
+    padding: 0rem;
+  }
+
+  .top-header aside {
+    display: none;
+  }
+
+  footer section {
+    display: block;
+  }
+  .source-connect-mobile {
+    display: block;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  .source-connect {
+    display: none;
+  }
+  .source-connect-mobile a img {
+    margin: 0 auto;
+  }
+  .footer-flex {
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+  }
+  .footer-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-height: fit-content;
+    padding: 10px;
+  }
+  .podcast {
+    justify-content: center;
+  }
+}

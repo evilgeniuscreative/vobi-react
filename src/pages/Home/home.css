@@ -2,14 +2,50 @@
 .main-right {
   background-color: var(--background);
   border-radius: 3px;
-  padding: 2rem 3rem;
   flex-basis: 48%;
+  padding: 2rem 3rem;
+}
+
+.main-page {
+  background-color: var(--mainblue);
+}
+
+.hero img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
+
+section.main-section.homepage {
+  align-content: stretch;
+  background-color: var(--mainblue);
+  border-top: 2px solid var(--foreground);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 2rem;
+}
+
+.main-single {
+  border-radius: 0.25rem;
+  padding: 2rem;
+}
+
+.main-content {
+  background-color: var(--background);
+  border-radius: 0.25rem;
+  margin: 2rem auto;
+  max-width: 1000px;
 }
 
 @media screen and (max-width: 768px) {
+
   .main-left,
   .main-right {
-    padding: 1rem;
     flex-basis: 100%;
+    padding: 1rem;
   }
 }

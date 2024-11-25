@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../App.css';
+import './Header.css';
 
 const Header = () => {
   return (
@@ -7,17 +8,25 @@ const Header = () => {
       <div className='top-header'>
         <section>
           <div className='top-header-front'>
-            <figure className='top-header-vobi-head'>
+            <Link
+              to='/'
+              className='top-header-vobi-head'
+              title='To home page'
+            >
               <img
                 src='./vobi-head.png'
                 alt='Voiceover by Ian - Animation, Commercial, Narration, Medical Narration, eLearning, Explainer, and more!'
               />
-            </figure>
+            </Link>
 
-            <aside className='top-text'>
+            <Link
+              to='/contact'
+              className='top-text'
+              title='To contact page'
+            >
               <div className='ian-name'>Ian Kleinfeld</div>
               <div className='ian-tag'>Voice Actor Services for You</div>
-            </aside>
+            </Link>
           </div>
           <figure className='bg-soundwave'>
             <img

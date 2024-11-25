@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import '../../App.css';
+import './Footer.css';
 
 const Footer = () => {
   const handleLink = (url: string) => (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -9,7 +10,7 @@ const Footer = () => {
   return (
     <>
       <section className='bottom-section'>
-        Tell me what you want, and I&apos;ll make it happen!
+        Tell me what you want to hear, and I&apos;ll make it happen!
       </section>
       <footer>
         <p className='footer-text'>

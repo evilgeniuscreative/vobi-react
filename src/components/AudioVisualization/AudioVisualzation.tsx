@@ -44,7 +44,7 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
         <p className='timer'>Current time: {formatTime(currentTime)}</p>
         <div className='btn-control'>
           <button
-            className={isPlaying ? 'btn-pause' : 'btn'}
+            className={isPlaying ? 'btn-pause' : 'btn btn-play'}
             onClick={onPlayPause}
             style={{ minWidth: '5em' }}
           >
