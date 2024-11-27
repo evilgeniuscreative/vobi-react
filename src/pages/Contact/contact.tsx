@@ -1,9 +1,7 @@
 import '../../css/buttons.css';
 import './contact.css';
 import React, { useRef, useState } from 'react';
-
 import { Link } from 'react-router-dom';
-import { APIProvider, Map } from '@vis.gl/react-google-maps';
 import Layout from '../../components/Layout/Layout';
 import emailjs from '@emailjs/browser';
 
