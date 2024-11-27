@@ -17,3 +17,11 @@
   max-width: 300px;
   padding: 0;
 }
+
+.icon-floaty-left {
+  color: var(--red);
+  float: left;
+  height: 40px;
+  margin-left: -45px;
+  margin-top: 6px;
+}

@@ -1,5 +1,6 @@
 // @ts-ignore
 import React from 'react';
+import { ChevronRightIcon } from '@heroicons/react/20/solid';
 import './about.css';
 import Layout from '../../components/Layout/Layout';
 import '../../App.css';
@@ -39,6 +40,15 @@ const About = () => {
           Whether it's figuring out how to make three voice actors and a folding table sound like a
           stadium full of fans or as the narrator or random character the client didn't know they
           needed until the last minute. In short, I'm flexible and there 100%.
+        </p>
+
+        <p className='icon-callout'>
+          <ChevronRightIcon className='icon-floaty-left' />I can work with you remotely with{' '}
+          <span className='emp'>
+            SourceConnect Standard, Zoom, Teams, Phone (single or multiple participants), E-mail,
+            and/or back-and-forth with files
+          </span>{' '}
+          until you're completely satisfied with the outcome.
         </p>
 
         <p>

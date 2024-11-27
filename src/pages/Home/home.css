@@ -32,17 +32,17 @@ section.main-section.homepage {
 .main-single {
   border-radius: 0.25rem;
   padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto 2rem auto;
 }
 
 .main-content {
   background-color: var(--background);
   border-radius: 0.25rem;
   margin: 2rem auto;
-  max-width: 1000px;
 }
 
 @media screen and (max-width: 768px) {
-
   .main-left,
   .main-right {
     flex-basis: 100%;

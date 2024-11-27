@@ -1,4 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 
 import './App.css';
 import Home from './pages/Home/home.tsx';
@@ -8,6 +9,7 @@ import Services from './pages/Services/services.tsx';
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <Routes>
         <Route
@@ -28,6 +30,7 @@ function App() {
         />
       </Routes>
     </Router>
+    </HelmetProvider>
   );
 }
 

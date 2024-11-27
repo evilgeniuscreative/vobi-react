@@ -9,19 +9,26 @@
 }
 
 .contact-page {
-  background: transparent;
-  margin: 0 auto;
-  max-width: 1000px;
+  background: var(--background);
+  margin: 0 auto 2rem auto;
+  width: 100%;
   padding: 0;
+}
+.contact-page .main-single {
+  max-width: 1000px;
 }
 
 .contact-page .inputs {
   align-items: stretch;
+  background-color: var(--mainblue);
+  border-radius: 4px;
+  color: white;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   height: auto;
   justify-content: space-between;
+  padding: 2rem 3rem;
 }
 
 .contact-success {
@@ -35,15 +42,42 @@
   width: 300px;
 }
 
+.contact-wrap {
+  background: var(--mainblue);
+  display: flex;
+  justify-content: space-around;
+}
+
+.contact-text {
+  color: white;
+  padding: 3rem;
+}
+
+.contact-map {
+  border: 0;
+  border-radius: 4px;
+  background-image: url('./durham-screenshot.jpg');
+  background-size: cover;
+  background-position: center center;
+  display: block;
+  height: 320px;
+  margin-top: 15px;
+  width: 400px;
+}
+
 input,
 textarea {
   border-radius: 0.25rem;
+  color: black;
   display: block;
-  font-size: 16px;
-  padding: 0.5rem;
-  width: 300px;
+  font-size: 18px;
+  padding: 0.5rem 0.75rem;
+  width: 350px;
 }
 
+textarea {
+  height: 325px;
+}
 iframe {
   border-radius: 0.25rem;
   margin: 0;
