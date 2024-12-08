@@ -1,5 +1,5 @@
 .contact-content {
-  background-color: var(--background);
+  background-color: var(--white);
   margin-bottom: 2rem;
 }
 
@@ -9,7 +9,7 @@
 }
 
 .contact-page {
-  background: var(--background);
+  background: var(--white);
   margin: 0 auto 2rem auto;
   width: 100%;
   padding: 0;
@@ -34,7 +34,7 @@
 .contact-success {
   background-color: var(--green);
   border-radius: 3px;
-  color: var(--foreground);
+  color: var(--black);
   opacity: 0;
   padding: 1.5rem;
   text-align: center;
@@ -95,7 +95,7 @@ label {
 }
 
 .main-text {
-  background-color: var(--background);
+  background-color: var(--white);
   border-radius: 3px;
   padding: 1.5rem;
 }

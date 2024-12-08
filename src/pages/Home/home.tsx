@@ -1,5 +1,6 @@
 import './home.css';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import AudioVisualzation from '../../components/AudioVisualization/AudioVisualzation';
@@ -11,7 +12,8 @@ const Home = () => {
         <Header></Header>
         <main>
           <div className='hero'>
-            <img
+            <LazyLoadImage
+              rel='preload'
               src={window.innerWidth <= 768 ? './durham-hero.webp' : './durham-hero-sm.webp'}
               alt='Ian Kleinfeld, voice actor, Durham, NC'
             />
@@ -47,8 +49,10 @@ const Home = () => {
           </article>
           <article className='main-right'>
             <h2>Demos</h2>
-            <p>Please have a listen to my demos to see what kinds of things I can do for you. </p>
-            <p>
+            <p className='about-text'>
+              Please have a listen to my demos to see what kinds of things I can do for you.{' '}
+            </p>
+            <p className='about-text'>
               <Link
                 to='https://calendly.com/voiceoverbyian'
                 className='link-visible'

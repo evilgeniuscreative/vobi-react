@@ -41,6 +41,10 @@
   transition: 0.3s all;
 }
 
+.main-menu a {
+  color: var(--black);
+  text-decoration: none;
+}
 .main-menu li:hover {
   transform: scale(1.3);
   transition: 0.3s ease-in-out all;
@@ -49,11 +53,10 @@
 .top-header section {
   align-items: center;
   background-color: var(--mainblue);
-  color: var(--foreground);
+  color: var(--black);
   display: flex;
   height: 110px;
   justify-content: space-around;
-  padding: 1.5rem;
 }
 
 .top-header section .bg-soundwave {
@@ -85,6 +88,10 @@
   flex-direction: column;
 }
 
+a.top-text {
+  color: white;
+  text-decoration: none;
+}
 .top-text .ian-name,
 .top-text .ian-tag {
   font-family: 'Gamay', sans-serif;
@@ -94,5 +101,13 @@
 @media screen and (max-width: 650px) {
   .top-header .top-text {
     display: none;
+  }
+  .top-header a {
+    display: block;
+  }
+  .top-header a img {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
   }
 }
