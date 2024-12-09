@@ -61,6 +61,21 @@ p {
   font-weight: 500;
 }
 
+.main-single {
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  padding: 2rem;
+  width: 1000px;
+  max-width: 100%;
+  margin: 0 auto 2rem auto;
+}
+
+.main-content {
+  background-color: var(--white);
+  border-radius: 0.25rem;
+  margin: 2rem auto;
+}
+
 /* MOBILE */
 
 @media screen and (max-width: 1300px) {

@@ -4,11 +4,7 @@ import { Helmet } from 'react-helmet-async';
 import '../../App.css';
 import './Header.css';
 
-
-
 const Header = () => {
-
-
   return (
     <>
       <Helmet>

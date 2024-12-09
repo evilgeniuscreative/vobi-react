@@ -30,18 +30,7 @@ section.main-section.homepage {
   width: 100%;
 }
 
-.main-single {
-  border-radius: 0.25rem;
-  padding: 2rem;
-  max-width: 1000px;
-  margin: 0 auto 2rem auto;
-}
 
-.main-content {
-  background-color: var(--white);
-  border-radius: 0.25rem;
-  margin: 2rem auto;
-}
 
 @media screen and (max-width: 1130px) {
   .main-left,

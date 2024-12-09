@@ -13,6 +13,10 @@ footer {
   padding: 70px 20%;
 }
 
+.footer-text > a {
+  color: var(--white);
+}
+
 footer > p {
   font-size: 0.8rem;
   padding-bottom: 15px;
@@ -147,6 +151,7 @@ footer section .podcast-text {
     display: flex;
     flex-basis: 100%;
     flex-direction: column;
+    margin-bottom: 225px;
   }
   .footer-icons {
     display: flex;

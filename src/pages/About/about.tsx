@@ -14,6 +14,8 @@ const About = () => {
         articleClasses='main-single'
         headingText='About'
       >
+
+
         <figure className='about-image'>
           <img
             src='./ian-studio-20211113.jpg'
