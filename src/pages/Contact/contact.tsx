@@ -114,7 +114,7 @@ const Contact = () => {
               it.
             </p>
             <p>
-              I live in Durham, NC, but I am able to record from my studio with SourceConnect, Zoom,
+              I am able to record from my studio with SourceConnect, Zoom,
               Teams, Phone, and take direction from them all, including back-and-forth samples with
               feedback until you are satisfied.
             </p>

@@ -1,10 +1,19 @@
 import React, { useRef, useMemo, useCallback } from 'react';
-// import { createRoot } from 'react-dom/client'
 import Timeline from 'wavesurfer.js/dist/plugins/timeline.esm.js';
 import { useWavesurfer } from '@wavesurfer/react';
 import { ArrowDownTrayIcon, PlayIcon, PauseIcon } from '@heroicons/react/20/solid';
+import type { RootState } from '../../app/store';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  addCommercial,
+  addCharacter,
+  pauseCommercial,
+  pauseCharacter,
+  DLCommercial,
+  DLCharacter,
+} from '../../features/counter/counterSlice';
 import './AudioVisualization.css';
-// import WaveSurfer from 'wavesurfer.js';
+import { ActionCreator, UnknownAction } from 'redux';
 
 // Define the interface for the props
 interface AudioVisualzationProps {
@@ -12,7 +21,46 @@ interface AudioVisualzationProps {
 }
 
 const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
+  const count = useSelector((state: RootState) => state.counter.value);
+  const dispatch = useDispatch();
+
+  let functions: ActionCreator<UnknownAction>,
+    {} = {
+      acom: addCommercial,
+      achar: addCharacter,
+      apcom: pauseCommercial,
+      apchar: pauseCharacter,
+      dlcom: DLCommercial,
+      dlchar: DLCharacter,
+    };
+
+  const handleFunction = (event: any) => {
+    console.log('handleFunction:', event.target);
+    if (audioSrc === 'commercial') {
+      audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';
+      if (document.getElementsByClassName('btn-play')) {
+        dispatch(addCommercial());
+        console.log('dispatch(addCommercial())');
+      } else if (document.getElementsByClassName('btn-pause')) {
+        dispatch(pauseCommercial());
+        console.log('dispatch(pauseCommercial())');
+      } else if (document.getElementsByClassName('btn dl')) {
+        dispatch(DLCommercial());
+        console.log('dispatch(DLCommercial())');
+      }
+    } else if (audioSrc === 'character') {
+      audioSource = '../audio/Ian_Kleinfeld_Character_Game_Animation_Demo_2024-11-15.mp3';
+      if (document.getElementsByClassName('btn-play')) {
+        dispatch(addCharacter());
+      } else if (document.getElementsByClassName('btn-pause')) {
+        dispatch(pauseCharacter());
+      } else if (document.getElementsByClassName('btn dl')) {
+        dispatch(DLCharacter());
+      }
+    }
+  };
   let audioSource: string = audioSrc;
+
   if (audioSrc === 'commercial') {
     audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';
   } else if (audioSrc === 'character') {
@@ -56,6 +104,7 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
             className='btn dl'
             download
             href={audioSource}
+            onClick={handleFunction}
           >
             <ArrowDownTrayIcon className='icon-dl' />
             Download

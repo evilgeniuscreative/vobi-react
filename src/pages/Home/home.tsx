@@ -1,22 +1,36 @@
 import './home.css';
+import '../../css/buttons.css';
 import { Link } from 'react-router-dom';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
+import type { RootState } from '../../app/store';
+import { useSelector, useDispatch } from 'react-redux';
 import AudioVisualzation from '../../components/AudioVisualization/AudioVisualzation';
+import { ArrowDownTrayIcon, EyeIcon } from '@heroicons/react/24/outline';
 
 const Home = () => {
+  const count = useSelector((state: RootState) => state.counter.value);
+  const handleView = () => {
+    window.open('/Ian_Kleinfeld_Acting_resume_2024.pdf', '_blank');
+  };
+
+  const handleDownload = () => {
+    const pdfUrl = '/Ian_Kleinfeld_Acting_resume_2024.pdf';
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = '/Ian_Kleinfeld_Acting_resume_2024.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <>
       <div className='content-container'>
         <Header></Header>
         <main>
           <div className='hero'>
-            <LazyLoadImage
-              rel='preload'
-              src={window.innerWidth <= 768 ? './durham-hero.webp' : './durham-hero-sm.webp'}
-              alt='Ian Kleinfeld, voice actor, Durham, NC'
-            />
+            <div className='hero-icon'></div>
           </div>
         </main>
         <section className='main-section homepage'>
@@ -25,7 +39,7 @@ const Home = () => {
             <p className='about-text'>
               I&apos;m Ian Kleinfeld, a voice talent with a boatload of enthusiasm, energy and
               creativity. I&apos;m a singer, songwriter, and drummer by hobby, and a voice actor by
-              love. I&apos;ve done professional commercial and theater acting since 1995.{' '}
+              love. I&apos;ve done professional commercial and theater acting since 1995.
             </p>
             <p className='about-text'>
               My favorite place to be, my “happy place,” is in the studio, whether for voice or
@@ -40,11 +54,31 @@ const Home = () => {
             <p className='about-text'>
               {' '}
               I am trained in voice acting through sessions or classes with Anna Garduno, Roger
-              Becker, Andy Roth, Deborah Sperling, and other coaches, seminars, and intensives.
+              Becker, Andy Roth, Deborah Sperling, Liz Atherton, the VO Dojo, and other coaches,
+              seminars, and intensives.
             </p>
             <p className='about-text'>
               I&apos;m trained in stage acting at Cabrillo College, University of California Santa
               Cruz, and Jean Shelton Acting Studio.
+            </p>
+            <p>
+              <div className='resume-links'>
+                Resume:{' '}
+                <a
+                  className='btn view'
+                  onClick={handleView}
+                >
+                  <EyeIcon className='icon-eye' />
+                  View
+                </a>{' '}
+                <a
+                  className='btn dl'
+                  onClick={handleDownload}
+                >
+                  <ArrowDownTrayIcon className='icon-dlr' />
+                  Download
+                </a>
+              </div>
             </p>
           </article>
           <article className='main-right'>
@@ -62,7 +96,9 @@ const Home = () => {
               to discuss your project, your needs, vision, and how I can help you.
             </p>
 
-            <p className='demo-title'>Commercial Demo</p>
+            <p className='demo-title'>
+              Commercial Demo {count.playcommercial}, {count.pausecommercial}, {count.dlcommercial}
+            </p>
             <AudioVisualzation audioSrc='commercial'></AudioVisualzation>
 
             <p className='demo-title'>Character / Game / Animation Demo</p>

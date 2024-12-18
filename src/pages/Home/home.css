@@ -19,6 +19,23 @@ section.main-section.homepage {
   padding: 2rem 3rem;
 }
 
+.hero {
+  height: 450px;
+  overflow: hidden;
+  background-image: url('./beach.jpg');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+.hero-icon {
+  display: block;
+  background: no-repeat center bottom url('./XylavieNoBg.png');
+  background-size: contain;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
 .main-page {
   background-color: var(--mainblue);
 }
@@ -30,7 +47,31 @@ section.main-section.homepage {
   width: 100%;
 }
 
+.resume-links {
+  display: flex;
+  font-weight: 500;
+  gap: 30px;
+  margin-top: 20px;
+}
 
+.resume-links a {
+  color: var(--mainblue);
+  font-size: 1rem;
+}
+a.btn.dl .icon-dl {
+  height: 30px;
+}
+
+a.btn.dl .icon-dlr {
+  height: 24px;
+  float: left;
+  padding-right: 5px;
+}
+
+a.btn.dl .icon-eye {
+  height: 20px;
+  float: left;
+}
 
 @media screen and (max-width: 1130px) {
   .main-left,
