@@ -35,7 +35,6 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
     };
 
   const handleDownload = (event: any) => {
-    event.preventDefault();
     const pdfUrl = '/Ian_Kleinfeld_Acting_resume_2024.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
@@ -47,6 +46,7 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
 
   const handleFunction = (event: any) => {
     console.log('handleFunction:');
+    event.preventDefault();
     if (audioSrc === 'commercial') {
       audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';
       console.log(event.target.id);
@@ -58,6 +58,7 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
         console.log('dispatch(pauseCommercial())');
       } else if (event.target.id === 'download') {
         dispatch(DLCommercial());
+        handleDownload(event);
         console.log('dispatch(DLCommercial())');
       }
     } else if (audioSrc === 'character') {
