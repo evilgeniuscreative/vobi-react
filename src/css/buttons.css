@@ -40,13 +40,13 @@ a.btn dl {
   padding: 10px 20px;
 }
 
-.btn-pause {
+#btn-pause {
   background-color: var(--green);
   border-radius: 4px;
   padding: 1px 8px;
 }
 
-.btn-play {
+#btn-play {
   border-radius: 4px;
   font-weight: 600;
   padding: 1px 8px;
@@ -54,7 +54,7 @@ a.btn dl {
   transition: all 0.3s ease-in-out;
 }
 
-.btn-play:hover {
+#btn-play:hover {
   background-color: var(--green);
   border-radius: 4px;
   color: black;

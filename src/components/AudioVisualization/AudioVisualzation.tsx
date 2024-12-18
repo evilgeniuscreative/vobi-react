@@ -34,28 +34,41 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
       dlchar: DLCharacter,
     };
 
+  const handleDownload = (event: any) => {
+    event.preventDefault();
+    const pdfUrl = '/Ian_Kleinfeld_Acting_resume_2024.pdf';
+    const link = document.createElement('a');
+    link.href = pdfUrl;
+    link.download = pdfUrl; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleFunction = (event: any) => {
-    console.log('handleFunction:', event.target);
+    console.log('handleFunction:');
     if (audioSrc === 'commercial') {
       audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';
-      if (document.getElementsByClassName('btn-play')) {
+      console.log(event.target.id);
+      if (event.target.id === 'btn-play') {
         dispatch(addCommercial());
         console.log('dispatch(addCommercial())');
-      } else if (document.getElementsByClassName('btn-pause')) {
+      } else if (event.target.id === 'btn-pause') {
         dispatch(pauseCommercial());
         console.log('dispatch(pauseCommercial())');
-      } else if (document.getElementsByClassName('btn dl')) {
+      } else if (event.target.id === 'download') {
         dispatch(DLCommercial());
         console.log('dispatch(DLCommercial())');
       }
     } else if (audioSrc === 'character') {
       audioSource = '../audio/Ian_Kleinfeld_Character_Game_Animation_Demo_2024-11-15.mp3';
-      if (document.getElementsByClassName('btn-play')) {
+      if (event.target.id === 'btn-play') {
         dispatch(addCharacter());
-      } else if (document.getElementsByClassName('btn-pause')) {
+      } else if (event.target.id === 'btn-pause') {
         dispatch(pauseCharacter());
-      } else if (document.getElementsByClassName('btn dl')) {
+      } else if (event.target.id === 'download') {
         dispatch(DLCharacter());
+        handleDownload(event);
       }
     }
   };
@@ -81,9 +94,13 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
     plugins: useMemo(() => [Timeline.create()], []),
   });
 
-  const onPlayPause = useCallback(() => {
-    wavesurfer && wavesurfer.playPause();
-  }, [wavesurfer]);
+  const onPlayPause = useCallback(
+    (event: any) => {
+      wavesurfer && wavesurfer.playPause();
+      handleFunction(event);
+    },
+    [wavesurfer]
+  );
 
   return (
     <>
@@ -92,7 +109,8 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
         <p className='timer'>Current time: {formatTime(currentTime)}</p>
         <div className='btn-control'>
           <button
-            className={isPlaying ? 'btn-pause' : 'btn btn-play'}
+            className='btn'
+            id={isPlaying ? 'btn-pause' : 'btn-play'}
             onClick={onPlayPause}
             style={{ minWidth: '5em' }}
           >
@@ -102,7 +120,7 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
 
           <a
             className='btn dl'
-            download
+            id='download'
             href={audioSource}
             onClick={handleFunction}
           >
