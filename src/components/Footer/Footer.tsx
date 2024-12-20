@@ -142,6 +142,7 @@ const Footer = () => {
             </article>
           </div>
         </section>
+        <Link to='/count'>_</Link>
       </footer>
     </>
   );

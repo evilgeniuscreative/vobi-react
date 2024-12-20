@@ -1,4 +1,5 @@
 import Layout from '../../components/Layout/Layout';
+import VobiAPI from '../../components/VobiAPI/VobiAPI';
 
 const Count = () => {
   return (
@@ -9,7 +10,9 @@ const Count = () => {
         articleClasses='main-single'
         headingText='Download Counts'
       >
-        Values
+        <h2>Count</h2>
+        <p>Still counting</p>
+        <VobiAPI />
       </Layout>
     </>
   );
