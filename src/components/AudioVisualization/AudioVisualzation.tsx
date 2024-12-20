@@ -2,8 +2,8 @@ import React, { useRef, useMemo, useCallback } from 'react';
 import Timeline from 'wavesurfer.js/dist/plugins/timeline.esm.js';
 import { useWavesurfer } from '@wavesurfer/react';
 import { ArrowDownTrayIcon, PlayIcon, PauseIcon } from '@heroicons/react/20/solid';
-import type { RootState } from '../../app/store';
-import { useSelector, useDispatch } from 'react-redux';
+// import type { RootState } from '../../app/store';
+import {  useDispatch } from 'react-redux';
 import {
   addCommercial,
   addCharacter,
@@ -13,7 +13,7 @@ import {
   DLCharacter,
 } from '../../features/counter/counterSlice';
 import './AudioVisualization.css';
-import { ActionCreator, UnknownAction } from 'redux';
+// import { ActionCreator, UnknownAction } from 'redux';
 
 // Define the interface for the props
 interface AudioVisualzationProps {
@@ -21,20 +21,21 @@ interface AudioVisualzationProps {
 }
 
 const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
-  const count = useSelector((state: RootState) => state.counter.value);
+  // const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
 
-  let functions: ActionCreator<UnknownAction>,
-    {} = {
-      acom: addCommercial,
-      achar: addCharacter,
-      apcom: pauseCommercial,
-      apchar: pauseCharacter,
-      dlcom: DLCommercial,
-      dlchar: DLCharacter,
-    };
+  // let functions: ActionCreator<UnknownAction>,
+  //   {} = {
+  //     acom: addCommercial,
+  //     achar: addCharacter,
+  //     apcom: pauseCommercial,
+  //     apchar: pauseCharacter,
+  //     dlcom: DLCommercial,
+  //     dlchar: DLCharacter,
+  //   };
 
   const handleDownload = (event: any) => {
+    console.log('handleDownload:', event.target.id);
     const pdfUrl = '/Ian_Kleinfeld_Acting_resume_2024.pdf';
     const link = document.createElement('a');
     link.href = pdfUrl;
@@ -45,7 +46,7 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
   };
 
   const handleFunction = (event: any) => {
-    console.log('handleFunction:');
+    console.log('handleFunction:', event.target.id);
     event.preventDefault();
     if (audioSrc === 'commercial') {
       audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';

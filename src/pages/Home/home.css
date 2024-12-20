@@ -22,7 +22,7 @@ section.main-section.homepage {
 .hero {
   height: 450px;
   overflow: hidden;
-  background-image: url('./beach.jpg');
+  background-image: url('/beach.jpg');
   background-size: cover;
   background-position: bottom center;
   background-repeat: no-repeat;
@@ -30,7 +30,7 @@ section.main-section.homepage {
 
 .hero-icon {
   display: block;
-  background: no-repeat center bottom url('./XylavieNoBg.png');
+  background: no-repeat center bottom url('/XylavieNoBg.png');
   background-size: contain;
   margin: 0 auto;
   height: 100%;

@@ -3,13 +3,13 @@ import '../../css/buttons.css';
 import { Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import type { RootState } from '../../app/store';
-import { useSelector, useDispatch } from 'react-redux';
+// import type { RootState } from '../../app/store';
+// import { useSelector } from 'react-redux';
 import AudioVisualzation from '../../components/AudioVisualization/AudioVisualzation';
 import { ArrowDownTrayIcon, EyeIcon } from '@heroicons/react/24/outline';
 
 const Home = () => {
-  const count = useSelector((state: RootState) => state.counter.value);
+  // const count = useSelector((state: RootState) => state.counter.value);
   const handleView = () => {
     window.open('/Ian_Kleinfeld_Acting_resume_2024.pdf', '_blank');
   };
@@ -97,7 +97,8 @@ const Home = () => {
             </p>
 
             <p className='demo-title'>
-              Commercial Demo {count.playcommercial}, {count.pausecommercial}, {count.dlcommercial}
+              Commercial Demo
+              {/* {count.playcommercial}, {count.pausecommercial}, {count.dlcommercial} */}
             </p>
             <AudioVisualzation audioSrc='commercial'></AudioVisualzation>
 
