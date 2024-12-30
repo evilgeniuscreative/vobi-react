@@ -1,4 +1,6 @@
 import Layout from '../../components/Layout/Layout';
+import '../../App.css';
+
 import VobiAPI from '../../components/VobiAPI/VobiAPI';
 
 const Count = () => {
