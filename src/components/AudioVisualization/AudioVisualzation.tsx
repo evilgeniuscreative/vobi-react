@@ -2,16 +2,7 @@ import React, { useRef, useMemo, useCallback } from 'react';
 import Timeline from 'wavesurfer.js/dist/plugins/timeline.esm.js';
 import { useWavesurfer } from '@wavesurfer/react';
 import { ArrowDownTrayIcon, PlayIcon, PauseIcon } from '@heroicons/react/20/solid';
-// import type { RootState } from '../../app/store';
-import {  useDispatch } from 'react-redux';
-import {
-  addCommercial,
-  addCharacter,
-  pauseCommercial,
-  pauseCharacter,
-  DLCommercial,
-  DLCharacter,
-} from '../../features/counter/counterSlice';
+
 import './AudioVisualization.css';
 // import { ActionCreator, UnknownAction } from 'redux';
 
@@ -22,7 +13,6 @@ interface AudioVisualzationProps {
 
 const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
   // const count = useSelector((state: RootState) => state.counter.value);
-  const dispatch = useDispatch();
 
   // let functions: ActionCreator<UnknownAction>,
   //   {} = {
@@ -52,24 +42,15 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
       audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';
       console.log(event.target.id);
       if (event.target.id === 'btn-play') {
-        dispatch(addCommercial());
-        console.log('dispatch(addCommercial())');
       } else if (event.target.id === 'btn-pause') {
-        dispatch(pauseCommercial());
-        console.log('dispatch(pauseCommercial())');
       } else if (event.target.id === 'download') {
-        dispatch(DLCommercial());
         handleDownload(event);
-        console.log('dispatch(DLCommercial())');
       }
     } else if (audioSrc === 'character') {
       audioSource = '../audio/Ian_Kleinfeld_Character_Game_Animation_Demo_2024-11-15.mp3';
       if (event.target.id === 'btn-play') {
-        dispatch(addCharacter());
       } else if (event.target.id === 'btn-pause') {
-        dispatch(pauseCharacter());
       } else if (event.target.id === 'download') {
-        dispatch(DLCharacter());
         handleDownload(event);
       }
     }

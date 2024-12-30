@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 
 const API_URL = 'https://voiceoverbyian.com/vobiAPI.php';
 
@@ -8,26 +7,40 @@ const VobiAPI = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
+  console.log(setData, setMessage, setLoading);
   useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(API_URL);
-        if (response.data.status === 'success') {
-          setData(response.data.data);
-          setMessage('Data fetched successfully');
-        } else {
-          console.log(response);
-          throw new Error(response.data.message);
-        }
-      } catch (error) {
-        setMessage(`Errorz: ${(error as Error).message}`);
-      } finally {
-        setLoading(false);
-      }
-    };
+    fetch(API_URL)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Fetched Data:', data);
+      })
+      .catch((error) => console.error('Fetch Error:', error));
 
-    fetchData();
+    // const fetchData = async () => {
+    //   setLoading(true);
+    //   try {
+    //     const response = await fetch(API_URL);
+
+    //     if (!response.ok) {
+    //       throw new Error(`HTTP error! status: ${response.status}`);
+    //     }
+    //     const result = await response.json();
+    //     if (result.status === 'success') {
+    //       setData(result.data);
+    //       setMessage('Data fetched successfully');
+    //     } else {
+    //       console.log(result);
+    //       throw new Error(result.message);
+    //     }
+    //   } catch (error) {
+    //     setMessage(`Errorz: ${(error as Error).message}`);
+    //   } finally {
+
+    //     setLoading(false);
+    //   }
+    // };
+
+    // fetchData();
   }, []);
 
   return (
@@ -40,7 +53,7 @@ const VobiAPI = () => {
           <thead>
             <tr>
               <th>Stat Name</th>
-              <th>&nbsp;&nbsp;&nbsp;Count</th>
+              <th>Count</th>
             </tr>
           </thead>
           <tbody>
