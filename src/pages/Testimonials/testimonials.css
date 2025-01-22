@@ -1,0 +1,73 @@
+.testimonial-container {
+  background-color: var(--white);
+  border: 1px solid red;
+}
+
+.testimonial-table th,
+td {
+  padding: 0 0 30px 0;
+  border: 1px solid red;
+}
+.testimonial-table td:first-child {
+  padding-right: 30px;
+}
+.testimonial-table td:last-child {
+  padding-left: 30px;
+}
+.testimonial-table td {
+  vertical-align: top;
+}
+
+.test-left,
+.test-right {
+  width: 45%;
+}
+
+.testimonial-name {
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: -10px;
+}
+
+.testimonial {
+  display: block;
+}
+
+.testimonial::before {
+  color: #000;
+  content: url('./quote.png');
+  display: inline-block;
+  height: 15px !important;
+  margin-right: 20px;
+  width: 15px !important;
+}
+
+.testimonial-name:before {
+  color: #000;
+  content: '—';
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+.testimonial-job-title {
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 40px;
+  padding-left: 30px;
+}
+.testimonial aside {
+  text-align: right;
+  text-align: right;
+}
+.attribution {
+  color: #000;
+  float: right;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.attribution a {
+  color: #000;
+  text-decoration: none;
+}

@@ -19,6 +19,10 @@ section.main-section.homepage {
   padding: 2rem 3rem;
 }
 
+.main-right .btn.dl {
+  margin-left: 15px;
+}
+
 .hero {
   height: 450px;
   overflow: hidden;
@@ -36,6 +40,7 @@ section.main-section.homepage {
   height: 100%;
   width: auto;
 }
+
 .main-page {
   background-color: var(--mainblue);
 }
@@ -47,36 +52,98 @@ section.main-section.homepage {
   width: 100%;
 }
 
-.resume-links {
-  display: flex;
+#resume-links {
+  clear: both;
   font-weight: 500;
-  gap: 30px;
-  margin-top: 20px;
-}
-
-.resume-links a {
-  color: var(--mainblue);
-  font-size: 1rem;
-}
-a.btn.dl .icon-dl {
   height: 30px;
 }
 
-a.btn.dl .icon-dlr {
-  height: 24px;
-  float: left;
-  padding-right: 5px;
+#resume-links a {
+  color: var(--mainblue);
+  font-size: 1rem;
+  height: 30px;
+  margin-right: 5px;
 }
 
-a.btn.dl .icon-eye {
-  height: 20px;
-  float: left;
+.resume-text {
+  display: inline-block;
+  margin-right: 15px;
 }
 
+.icon-btn,
+.icon-dl {
+  display: inline-block;
+  height: 30px;
+  width: 25px;
+  margin-right: 5px;
+}
+
+.rl-text {
+  display: inline-block;
+  height: 30px;
+  vertical-align: top;
+}
+
+#btn-play,
+#btn-pause {
+  padding-top: 5px;
+}
+#btn-play .rl-text,
+.rl-pause .rl-text {
+  height: 30px;
+  vertical-align: top;
+}
+
+#commercial .rl-text,
+#character .rl-text {
+  display: inline-block;
+  height: 30px;
+  line-height: 1.4;
+}
+
+#resume-links a {
+  display: inline-block;
+  position: relative;
+  width: 120px;
+}
+
+#resume-links a .icon-btn {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+
+#resume-links a .rl-text {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+#resume-links a.btn.dl .rl-text {
+  padding-left: 10px;
+}
 @media screen and (max-width: 1130px) {
+  section.main-section.homepage {
+    padding: 0.25rem;
+    display: block;
+  }
   .main-left,
   .main-right {
-    flex-basis: 100%;
     padding: 1rem;
+  }
+  .main-right {
+    margin-top: 1rem;
+  }
+
+  #resume-links {
+    gap: 7%;
+  }
+
+  #resume-links a {
+    font-size: 0.9rem;
+  }
+}
+@media screen and (max-width: 650px) {
+  #resume-links {
+    margin-top: 40px;
   }
 }

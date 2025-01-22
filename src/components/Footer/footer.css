@@ -136,6 +136,9 @@ footer section .podcast-text {
   footer section {
     display: block;
   }
+  footer {
+    padding-top: 40px;
+  }
   .source-connect-mobile {
     display: block;
     padding-bottom: 20px;
@@ -143,6 +146,11 @@ footer section .podcast-text {
   }
   .source-connect {
     display: none;
+  }
+
+  .source-connect-mobile {
+    display: flex;
+    justify-content: center;
   }
   .source-connect-mobile a img {
     margin: 0 auto;
@@ -160,7 +168,17 @@ footer section .podcast-text {
     max-height: fit-content;
     padding: 10px;
   }
+  .footer-text {
+    font-size: 1.1rem;
+    text-align: center;
+  }
   .podcast {
     justify-content: center;
+  }
+  footer section .podcast-text {
+    font-size: 1.1rem;
+  }
+  footer section .pod-text {
+    margin-top: 0;
   }
 }

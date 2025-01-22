@@ -2,7 +2,8 @@
   background-color: var(--mainblue);
 }
 
-.ian-name {
+.ian-name,
+.ian-title {
   font-size: 2.35rem;
   font-weight: bold;
   margin-bottom: 0;
@@ -28,10 +29,11 @@
 
 .main-menu ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   list-style-type: none;
   margin: 0 auto;
   max-width: 890px;
+  gap: 7.5%;
   padding: 0;
 }
 
@@ -82,6 +84,20 @@
   width: 100%;
 }
 
+.top-header-vobi-head {
+  color: var(--white);
+  max-height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-decoration: none;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+.top-header-vobi-head img {
+  max-height: 100px;
+}
 .top-header .top-text {
   color: white;
   display: flex;
@@ -93,7 +109,8 @@ a.top-text {
   text-decoration: none;
 }
 .top-text .ian-name,
-.top-text .ian-tag {
+.top-text .ian-tag,
+.top-text .ian-title {
   font-family: 'Gamay', sans-serif;
   text-align: right;
 }
@@ -102,12 +119,17 @@ a.top-text {
   .top-header .top-text {
     display: none;
   }
-  .top-header a {
-    display: block;
+  .top-header-vobi-head img {
+    max-height: 80px;
   }
-  .top-header a img {
-    display: block;
-    margin: 0 auto;
-    width: 90%;
+  .top-header .ian-title {
+    font-size: 2.35rem;
+  }
+  .main-menu {
+    padding: 16px 10px;
+  }
+  .main-menu ul {
+    gap: 5%;
+    justify-content: center;
   }
 }

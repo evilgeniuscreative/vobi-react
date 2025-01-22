@@ -7,6 +7,8 @@
   font-size: 20px;
   font-weight: 500;
   min-width: 100px;
+  max-width: 200px;
+  max-height: 30px;
   padding: 2px 8px;
   text-align: center;
   text-decoration: none !important;
@@ -29,6 +31,12 @@ a.btn dl {
   transition: all 0.3s ease-in-out;
 }
 
+.btn svg {
+  max-height: 30px;
+  max-width: 30px;
+  padding-right: 5px;
+}
+
 .btn-control {
   background-color: #274b95;
   border-bottom-left-radius: 4px;
@@ -43,13 +51,11 @@ a.btn dl {
 #btn-pause {
   background-color: var(--green);
   border-radius: 4px;
-  padding: 1px 8px;
 }
 
 #btn-play {
   border-radius: 4px;
   font-weight: 600;
-  padding: 1px 8px;
   text-align: left;
   transition: all 0.3s ease-in-out;
 }
@@ -58,15 +64,17 @@ a.btn dl {
   background-color: var(--green);
   border-radius: 4px;
   color: black;
-  padding: 1px 8px;
   transition: all 0.3s ease-in-out;
+}
+
+a.btn.view {
+  color: white;
 }
 
 a.dl {
   background-color: var(--orange);
   color: var(--black);
   border-radius: 4px;
-  padding: 2px 8px;
   text-decoration: none;
   transition: all 0.3s ease-in-out;
 }
@@ -76,16 +84,16 @@ a.view:hover {
   background-color: var(--green);
   border-radius: 4px;
   color: var(--black);
-  padding: 2px 8px;
   transition: all 0.3s ease-in-out;
 }
 
-.icon-dl,
+/* .icon-dl,
+.icon-dlr,
 .icon-eye {
   float: left;
-  height: 30px;
+  height: 25px;
   padding-right: 5px;
-}
+} */
 
 .icon-pp {
   float: left;

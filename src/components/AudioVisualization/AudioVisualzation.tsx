@@ -4,68 +4,28 @@ import { useWavesurfer } from '@wavesurfer/react';
 import { ArrowDownTrayIcon, PlayIcon, PauseIcon } from '@heroicons/react/20/solid';
 
 import './AudioVisualization.css';
-// import { ActionCreator, UnknownAction } from 'redux';
 
 // Define the interface for the props
 interface AudioVisualzationProps {
   audioSrc: string;
 }
 
+const audioMap = {
+  commercial: '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3',
+  character: '../audio/Ian_Kleinfeld_Character_Game_Animation_Demo_2024-11-15.mp3',
+  billnye: '../audio/Ian_Kleinfeld_Bill_Nye_Soundalike_2024-11-15.mp3',
+  bcbs1: '../audio/Ian_Kleinfeld_Sports_Theme_2024-11-15.mp3',
+  bcbs2: '../audio/Ian_Kleinfeld_BCBSNC_2024-11-15.mp3',
+  threshold: '../audio/Ian_Kleinfeld_Threshold_2024-11-15.mp3',
+};
+
 const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
-  // const count = useSelector((state: RootState) => state.counter.value);
-
-  // let functions: ActionCreator<UnknownAction>,
-  //   {} = {
-  //     acom: addCommercial,
-  //     achar: addCharacter,
-  //     apcom: pauseCommercial,
-  //     apchar: pauseCharacter,
-  //     dlcom: DLCommercial,
-  //     dlchar: DLCharacter,
-  //   };
-
-  const handleDownload = (event: any) => {
-    console.log('handleDownload:', event.target.id);
-    const pdfUrl = '/Ian_Kleinfeld_Acting_resume_2024.pdf';
-    const link = document.createElement('a');
-    link.href = pdfUrl;
-    link.download = pdfUrl; // specify the filename
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
-  const handleFunction = (event: any) => {
-    console.log('handleFunction:', event.target.id);
-    event.preventDefault();
-    if (audioSrc === 'commercial') {
-      audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';
-      console.log(event.target.id);
-      if (event.target.id === 'btn-play') {
-      } else if (event.target.id === 'btn-pause') {
-      } else if (event.target.id === 'download') {
-        handleDownload(event);
-      }
-    } else if (audioSrc === 'character') {
-      audioSource = '../audio/Ian_Kleinfeld_Character_Game_Animation_Demo_2024-11-15.mp3';
-      if (event.target.id === 'btn-play') {
-      } else if (event.target.id === 'btn-pause') {
-      } else if (event.target.id === 'download') {
-        handleDownload(event);
-      }
-    }
-  };
-  let audioSource: string = audioSrc;
-
-  if (audioSrc === 'commercial') {
-    audioSource = '../audio/Ian_Kleinfeld_Commercial_Demo_2024-11-15.mp3';
-  } else if (audioSrc === 'character') {
-    audioSource = '../audio/Ian_Kleinfeld_Character_Game_Animation_Demo_2024-11-15.mp3';
-  }
-
   const containerRef = useRef(null);
+
   const formatTime = (seconds: number) =>
     [seconds / 60, seconds % 60].map((v) => `0${Math.floor(v)}`.slice(-2)).join(':');
+
+  const audioSource = audioMap[audioSrc as keyof typeof audioMap];
 
   const { wavesurfer, isPlaying, currentTime } = useWavesurfer({
     container: containerRef,
@@ -74,45 +34,43 @@ const AudioVisualzation: React.FC<AudioVisualzationProps> = ({ audioSrc }) => {
     progressColor: 'rgb(129, 131, 240)',
     barWidth: 2,
     url: audioSource,
-    plugins: useMemo(() => [Timeline.create()], []),
+    plugins: useMemo(() => [Timeline.create()], [audioSource]),
   });
 
-  const onPlayPause = useCallback(
-    (event: any) => {
-      wavesurfer && wavesurfer.playPause();
-      handleFunction(event);
-    },
-    [wavesurfer]
-  );
+  const onPlayPause = useCallback(() => {
+    wavesurfer && wavesurfer.playPause();
+  }, [wavesurfer]);
 
   return (
-    <>
-      <section className='demo'>
-        <div ref={containerRef} />
-        <p className='timer'>Current time: {formatTime(currentTime)}</p>
-        <div className='btn-control'>
-          <button
-            className='btn'
-            id={isPlaying ? 'btn-pause' : 'btn-play'}
-            onClick={onPlayPause}
-            style={{ minWidth: '5em' }}
-          >
-            {isPlaying ? 'Pause' : 'Play'}
+    <section className='demo'>
+      <div ref={containerRef} />
+      <p className='timer'>Current time: {formatTime(currentTime)}</p>
+      <div className='btn-control'>
+        <button
+          className='btn'
+          id={isPlaying ? 'btn-pause' : 'btn-play'}
+          onClick={onPlayPause}
+          style={{ minWidth: '5em' }}
+        >
+          <span className='icon-btn'>
             {isPlaying ? <PauseIcon className='icon-pp' /> : <PlayIcon className='icon-pp' />}
-          </button>
+          </span>
+          <span className='rl-text'> {isPlaying ? 'Pause' : 'Play'}</span>
+        </button>
 
-          <a
-            className='btn dl'
-            id='download'
-            href={audioSource}
-            onClick={handleFunction}
-          >
+        <a
+          className='btn dl'
+          id={audioSrc}
+          href={audioSource}
+          download
+        >
+          <span className='icon-dl'>
             <ArrowDownTrayIcon className='icon-dl' />
-            Download
-          </a>
-        </div>
-      </section>
-    </>
+          </span>
+          <span className='rl-text'>Download</span>
+        </a>
+      </div>
+    </section>
   );
 };
 

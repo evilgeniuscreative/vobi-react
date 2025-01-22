@@ -14,8 +14,14 @@ const Footer = () => {
       </section>
       <footer>
         <p className='footer-text'>
-          Broadcast-ready home studio with Source-Connect, Skype, Hangouts, and Phone |{' '}
-          <a href='19193576004'>(919) 357-6004</a>
+          Broadcast-ready home studio with Source-Connect, Skype, Hangouts, and Phone{' '}
+          <span className='hideForSmall'>|</span>{' '}
+          <a
+            className='blockForSmall'
+            href='19193576004'
+          >
+            (919) 357-6004
+          </a>
         </p>
         <section className='footer-flex'>
           <div className='icon-container'>
@@ -105,7 +111,7 @@ const Footer = () => {
           </div>
 
           <div className='podcast-right'>
-            <article className='podcast'>
+            <article className='podcast fullSize'>
               <div className='podcast-text'>
                 <p className='pod-text'>Voiceover is hard to get into.</p>
                 <p className='pod-text'>
@@ -115,7 +121,7 @@ const Footer = () => {
                   </em>
                   and how you can too. Listen in. It’s free!
                 </p>
-                <p className='pod-text'>
+                <p className='pod-text vop-link'>
                   <Link
                     to='http://voiceoverpodcast.com'
                     className='vop-link'

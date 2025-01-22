@@ -35,9 +35,9 @@ const Home = () => {
         </main>
         <section className='main-section homepage'>
           <article className='main-left'>
-            <h2>50% guy next door, 50% evil genius mad scientist. 100% your choice.</h2>
+            <h2>50% nice guy next door, 50% evil genius and voiceover mad scientist. 100% your choice.</h2>
             <p className='about-text'>
-              I&apos;m Ian Kleinfeld, a voice talent with a boatload of enthusiasm, energy and
+              I&apos;m Ian Kleinfeld, a dynamic voice talent with a boatload of enthusiasm, energy and
               creativity. I&apos;m a singer, songwriter, and drummer by hobby, and a voice actor by
               love. I&apos;ve done professional commercial and theater acting since 1995.
             </p>
@@ -61,22 +61,29 @@ const Home = () => {
               I&apos;m trained in stage acting at Cabrillo College, University of California Santa
               Cruz, and Jean Shelton Acting Studio.
             </p>
+
             <p>
-              <div className='resume-links'>
-                Resume:{' '}
+              <div id='resume-links'>
+                <span className='resume-text'>Resume:</span>
                 <a
                   className='btn view'
                   onClick={handleView}
                 >
-                  <EyeIcon className='icon-eye' />
-                  View
-                </a>{' '}
+                  <span className='icon-btn'>
+                    <EyeIcon className='icon-eye' />
+                  </span>
+                  <span className='rl-text'>View</span>
+                </a>
+
                 <a
                   className='btn dl'
                   onClick={handleDownload}
                 >
-                  <ArrowDownTrayIcon className='icon-dlr' />
-                  Download
+                  <span className='icon-btn'>
+                    <ArrowDownTrayIcon className='icon-dlr' />
+                  </span>
+
+                  <span className='rl-text'>Download</span>
                 </a>
               </div>
             </p>
